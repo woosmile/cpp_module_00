@@ -5,18 +5,25 @@ class PhoneBook
 {
 	private:
 		Contact	contact[8];
-		int		idx;
+		int		index;
 	public:
-		void	init_idx();
-		void	add_contact();
+		void	InitialIndex();
+		void	AddContact();
+		void	ShowContact(int find_idx);
 };
 
-void	PhoneBook::init_idx()
+void	PhoneBook::InitialIndex()
 {
-	idx = 0;
+	index = 0;
 }
 
-void	PhoneBook::add_contact()
+void	PhoneBook::AddContact()
 {
-	
+	contact[index].InputData();
+	index = (index + 1) % 8;
+}
+
+void	PhoneBook::ShowContact(int find_idx)
+{
+	contact[find_idx].ShowData();
 }

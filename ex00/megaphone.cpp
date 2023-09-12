@@ -1,17 +1,17 @@
 #include <iostream>
 
-class megaphone
+class Megaphone
 {
 	private:
 		int			str_len;
 		std::string	upper_str;
 	public:
-		void	check_str_len(int argc, char **argv);
-		void	input_upper_str(int argc, char **argv);
-		void	print_str();
+		void	CheckStringLength(int argc, char **argv);
+		void	InputUpperString(int argc, char **argv);
+		void	PrintString();
 };
 
-void	megaphone::check_str_len(int argc, char **argv)
+void	Megaphone::CheckStringLength(int argc, char **argv)
 {
 	int			len;
 	int			idx_y;
@@ -28,7 +28,7 @@ void	megaphone::check_str_len(int argc, char **argv)
 	str_len = len;
 }
 
-void	megaphone::input_upper_str(int argc, char **argv)
+void	Megaphone::InputUpperString(int argc, char **argv)
 {
 	std::string	argv_str_tmp;
 
@@ -50,7 +50,7 @@ void	megaphone::input_upper_str(int argc, char **argv)
 	}
 }
 
-void	megaphone::print_str()
+void	Megaphone::PrintString()
 {
 	if (str_len > 0)
 	{
@@ -64,10 +64,10 @@ void	megaphone::print_str()
 
 int	main(int argc, char **argv)
 {
-	megaphone	megaphone;
+	Megaphone	megaphone;
 
-	megaphone.check_str_len(argc, argv);
-	megaphone.input_upper_str(argc, argv);
-	megaphone.print_str();
+	megaphone.CheckStringLength(argc, argv);
+	megaphone.InputUpperString(argc, argv);
+	megaphone.PrintString();
 	return (0);
 }
