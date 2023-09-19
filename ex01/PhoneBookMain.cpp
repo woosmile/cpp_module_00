@@ -3,21 +3,20 @@
 
 int main()
 {
-	PhoneBook phonebook;
+	Phonebook phonebook = Phonebook();
 	std::string mode;
 
-	phonebook.InitialIndex();
 	while (1)
 	{
-		std::cout << "Select one of the following: ADD, SEARCH, or EXIT.\n";
+		std::cout << "Select one of the following: ADD, SEARCH, or EXIT: ";
 		std::cin >> mode;
-
-		if (mode == "ADD")
-		{
+		if (std::cin.eof())
+			exit(0);
+		if (mode.compare("ADD") == 0)
 			phonebook.AddContact();
-			phonebook.ShowContact(0);
-		}
-		else if (mode == "EXIT")
+		else if (mode.compare("SEARCH") == 0)
+			phonebook.ShowContact();
+		else if (mode.compare("EXIT") == 0)
 			break ;
 	}
 	return (0);
