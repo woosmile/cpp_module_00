@@ -10,7 +10,9 @@ Contact.hpp \
 PhoneBook.hpp
 
 SRCS = \
-PhoneBookMain.cpp
+Contact.cpp \
+Phonebook.cpp \
+ex01_main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all : $(NAME)
