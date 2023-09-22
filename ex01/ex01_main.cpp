@@ -1,8 +1,8 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 int main()
 {
-	Phonebook phonebook = Phonebook();
+	PhoneBook 	phonebook;
 	std::string mode;
 
 	while (1)

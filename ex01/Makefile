@@ -11,7 +11,7 @@ PhoneBook.hpp
 
 SRCS = \
 Contact.cpp \
-Phonebook.cpp \
+PhoneBook.cpp \
 ex01_main.cpp
 OBJS = $(SRCS:.cpp=.o)
 

@@ -1,15 +1,12 @@
 #include "Contact.hpp"
 
-class Phonebook
+class PhoneBook
 {
 	private:
 		Contact	contact[8];
 		int		index;
 	public:
-		Phonebook()
-		{
-			this->index = 0;
-		}
+		PhoneBook();
 		void	AddContact();
 		void	ShowContact();
 };

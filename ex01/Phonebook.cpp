@@ -1,6 +1,11 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
-void	Phonebook::AddContact()
+PhoneBook::PhoneBook()
+{
+	index = 0;
+}
+
+void	PhoneBook::AddContact()
 {
 	contact[index].InputData();
 	index = (index + 1) % 8;
@@ -8,7 +13,7 @@ void	Phonebook::AddContact()
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-void	Phonebook::ShowContact()
+void	PhoneBook::ShowContact()
 {
 	int	find_idx;
 	int	show_idx;
