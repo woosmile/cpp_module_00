@@ -1,5 +1,8 @@
-#include <iostream>
-#include <iomanip>
+#ifndef CONTACT_HPP
+# define CONTACT_HPP
+
+# include <iostream>
+# include <iomanip>
 
 class Contact
 {
@@ -14,3 +17,5 @@ class Contact
 		int			CheckEmpty();
 		void		ShowData(int idx);
 };
+
+#endif
