@@ -3,6 +3,8 @@
 
 # include <iostream>
 # include <iomanip>
+# include <limits>
+# include <stdlib.h>
 
 class Contact
 {
