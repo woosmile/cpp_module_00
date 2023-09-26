@@ -13,6 +13,8 @@ class Contact
 		std::string	number;
 		std::string	secret;
 	public:
+		Contact();
+		~Contact();
 		void		InputData();
 		int			CheckEmpty();
 		void		ShowData(int idx);

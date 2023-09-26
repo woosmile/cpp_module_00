@@ -1,14 +1,17 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook(): _index(0)
 {
-	index = 0;
+}
+
+PhoneBook::~PhoneBook()
+{
 }
 
 void	PhoneBook::AddContact()
 {
-	contact[index].InputData();
-	index = (index + 1) % 8;
+	contact[_index].InputData();
+	_index = (_index + 1) % 8;
 	std::cin.clear();
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
@@ -19,7 +22,7 @@ void	PhoneBook::ShowContact()
 	int	show_idx;
 
 	show_idx = 0;
-	std::cout << std::setw(10) << "index";
+	std::cout << std::setw(10) << "_index";
 	std::cout << "|";
 	std::cout << std::setw(10) << "last name";
 	std::cout << "|";
@@ -33,7 +36,7 @@ void	PhoneBook::ShowContact()
 	}
 	while (1)
 	{
-		std::cout << "Enter an index for the contact: ";
+		std::cout << "Enter an _index for the contact: ";
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		std::cin >> find_idx;
@@ -41,7 +44,7 @@ void	PhoneBook::ShowContact()
 			exit(0);
 		if (std::cin.fail() || find_idx < 0 || find_idx > 8)
 		{
-			std::cout << "Invalid index number. Please enter between 0 and 7.\n";
+			std::cout << "Invalid _index number. Please enter between 0 and 7.\n";
 			continue ;
 		}
 		else

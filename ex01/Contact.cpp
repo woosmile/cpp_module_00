@@ -1,5 +1,13 @@
 #include "Contact.hpp"
 
+Contact::Contact()
+{
+}
+
+Contact::~Contact()
+{
+}
+
 void	Contact::InputData()
 {
 	int	add_idx = 0;
