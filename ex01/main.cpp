@@ -8,9 +8,9 @@ int main()
 	while (1)
 	{
 		std::cout << "Select one of the following: ADD, SEARCH, or EXIT: ";
-		std::cin >> mode;
+		std::getline(std::cin, mode);
 		if (std::cin.eof())
-			exit(0);
+			return (0);
 		if (mode.compare("ADD") == 0)
 			phonebook.AddContact();
 		else if (mode.compare("SEARCH") == 0)

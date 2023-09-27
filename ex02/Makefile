@@ -1,6 +1,6 @@
 NAME = account
 
-CPPFLAGS = -Werror -Wall -Wextra -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
 RM = rm
 RMFLAGS = -rf
@@ -16,10 +16,7 @@ OBJS = $(SRCS:.cpp=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(HEADER)
-	$(CXX) $(CPPFLAGS) -o $@ $(OBJS)
-
-$(OBJS) : $(SRCS) $(HEADER)
-	$(CXX) $(CPPFLAGS) -c $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
 
 clean :
 	$(RM) $(RMFLAGS) $(OBJS)

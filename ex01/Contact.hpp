@@ -3,8 +3,7 @@
 
 # include <iostream>
 # include <iomanip>
-# include <limits>
-# include <stdlib.h>
+# include <cstdlib>
 
 class Contact
 {
@@ -19,7 +18,7 @@ class Contact
 		~Contact();
 		void		InputData();
 		int			CheckEmpty();
-		void		ShowData(int idx);
+		void		ShowData(int idx, int secret);
 };
 
 #endif

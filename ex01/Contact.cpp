@@ -19,9 +19,7 @@ void	Contact::InputData()
 			case 0 :
 			{
 				std::cout << "first name: ";
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cin >> first_name;
+				std::getline(std::cin, first_name);
 				if (std::cin.eof())
 					exit(0);
 				if (first_name.empty())
@@ -31,9 +29,7 @@ void	Contact::InputData()
 			case 1 :
 			{
 				std::cout << "last name: ";
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cin >> last_name;
+				std::getline(std::cin, last_name);
 				if (std::cin.eof())
 					exit(0);
 				if (last_name.empty())
@@ -43,9 +39,7 @@ void	Contact::InputData()
 			case 2 :
 			{
 				std::cout << "nickname: ";
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cin >> nickname;
+				std::getline(std::cin, nickname);
 				if (std::cin.eof())
 					exit(0);
 				if (nickname.empty())
@@ -55,9 +49,7 @@ void	Contact::InputData()
 			case 3 :
 			{
 				std::cout << "number: ";
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cin >> number;
+				std::getline(std::cin, number);
 				if (std::cin.eof())
 					exit(0);
 				if (number.empty())
@@ -67,9 +59,7 @@ void	Contact::InputData()
 			case 4 :
 			{
 				std::cout << "secret: ";
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-				std::cin >> secret;
+				std::getline(std::cin, secret);
 				if (std::cin.eof())
 					exit(0);
 				if (secret.empty())
@@ -77,9 +67,7 @@ void	Contact::InputData()
 				break ;
 			}
 			default :
-			{
 				std::cout << "exception.\n";
-			}
 		}
 		add_idx++;
 	}
@@ -93,28 +81,54 @@ int	Contact::CheckEmpty()
 		return (0);
 }
 
-void Contact::ShowData(int idx)
+void Contact::ShowData(int idx, int mode)
 {
-	std::cout << std::setw(10) << idx;
+	std::string	show_str;
+
+	std::cout << std::setw(10) << idx + 1;
 	std::cout << "|";
+	show_str = last_name;
 	if (last_name.length() > 10)
 	{
-		last_name.resize(9);
-		last_name.append(".");
+		show_str.resize(9);
+		show_str.append(".");
 	}
-	std::cout << std::setw(10) << last_name;
+	std::cout << std::setw(10) << show_str;
 	std::cout << "|";
+	show_str = first_name;
 	if (first_name.length() > 10)
 	{
-		first_name.resize(9);
-		first_name.append(".");
+		show_str.resize(9);
+		show_str.append(".");
 	}
-	std::cout << std::setw(10) << first_name;
+	std::cout << std::setw(10) << show_str;
 	std::cout << "|";
-	if (number.length() > 10)
+	show_str = nickname;
+	if (nickname.length() > 10)
 	{
-		number.resize(9);
-		number.append(".");
+		show_str.resize(9);
+		show_str.append(".");
 	}
-	std::cout << std::setw(10) << number << std::endl;
+	std::cout << std::setw(10) << show_str;
+	if (mode == 0)
+		std::cout << std::endl;
+	else
+	{
+		std::cout << "|";
+		show_str = number;
+		if (number.length() > 10)
+		{
+			show_str.resize(9);
+			show_str.append(".");
+		}
+		std::cout << std::setw(10) << show_str;
+		std::cout << "|";
+		show_str = secret;
+		if (secret.length() > 10)
+		{
+			show_str.resize(9);
+			show_str.append(".");
+		}
+		std::cout << std::setw(10) << show_str << std::endl;
+	}
 }
