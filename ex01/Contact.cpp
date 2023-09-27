@@ -81,54 +81,32 @@ int	Contact::CheckEmpty()
 		return (0);
 }
 
-void Contact::ShowData(int idx, int mode)
+std::string	Contact::DecoData(std::string origin_str)
 {
 	std::string	show_str;
 
-	std::cout << std::setw(10) << idx + 1;
-	std::cout << "|";
-	show_str = last_name;
-	if (last_name.length() > 10)
+	show_str = origin_str;
+	if (origin_str.length() > 10)
 	{
 		show_str.resize(9);
 		show_str.append(".");
+		return (show_str);
 	}
-	std::cout << std::setw(10) << show_str;
-	std::cout << "|";
-	show_str = first_name;
-	if (first_name.length() > 10)
-	{
-		show_str.resize(9);
-		show_str.append(".");
-	}
-	std::cout << std::setw(10) << show_str;
-	std::cout << "|";
-	show_str = nickname;
-	if (nickname.length() > 10)
-	{
-		show_str.resize(9);
-		show_str.append(".");
-	}
-	std::cout << std::setw(10) << show_str;
+	return (origin_str);
+}
+
+void Contact::ShowData(int idx, int mode)
+{
+	std::cout << std::setw(10) << idx + 1 << "|";
+	std::cout << std::setw(10) << DecoData(last_name) << "|";
+	std::cout << std::setw(10) << DecoData(first_name) << "|";
+	std::cout << std::setw(10) << DecoData(nickname);
 	if (mode == 0)
 		std::cout << std::endl;
 	else
 	{
 		std::cout << "|";
-		show_str = number;
-		if (number.length() > 10)
-		{
-			show_str.resize(9);
-			show_str.append(".");
-		}
-		std::cout << std::setw(10) << show_str;
-		std::cout << "|";
-		show_str = secret;
-		if (secret.length() > 10)
-		{
-			show_str.resize(9);
-			show_str.append(".");
-		}
-		std::cout << std::setw(10) << show_str << std::endl;
+		std::cout << std::setw(10) << DecoData(number) << "|";
+		std::cout << std::setw(10) << DecoData(secret) << std::endl;
 	}
 }

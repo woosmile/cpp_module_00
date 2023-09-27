@@ -18,6 +18,7 @@ class Contact
 		~Contact();
 		void		InputData();
 		int			CheckEmpty();
+		std::string	DecoData(std::string origin_str);
 		void		ShowData(int idx, int secret);
 };
 
