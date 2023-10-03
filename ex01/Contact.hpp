@@ -13,12 +13,12 @@ class Contact
 		std::string	nickname;
 		std::string	number;
 		std::string	secret;
+		std::string	DecoData(std::string origin_str);
 	public:
 		Contact();
 		~Contact();
 		void		InputData();
 		int			CheckEmpty();
-		std::string	DecoData(std::string origin_str);
 		void		ShowData(int idx, int secret);
 };
 

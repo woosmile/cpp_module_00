@@ -15,7 +15,7 @@ void	Megaphone::PrintUpperString(int argc, char **argv)
 		for (int idx_x = 0; argv[idx_y][idx_x] != '\0'; idx_x++)
 		{
 			if (std::islower(argv[idx_y][idx_x]) == 1)
-				argv[idx_y][idx_x] = toupper(argv[idx_y][idx_x]);
+				argv[idx_y][idx_x] = std::toupper(argv[idx_y][idx_x]);
 		}
 		upper_str.append(argv[idx_y]);
 	}

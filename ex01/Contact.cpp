@@ -67,7 +67,7 @@ void	Contact::InputData()
 				break ;
 			}
 			default :
-				std::cout << "exception.\n";
+				std::cout << "exception." << std::endl;
 		}
 		add_idx++;
 	}
@@ -83,30 +83,31 @@ int	Contact::CheckEmpty()
 
 std::string	Contact::DecoData(std::string origin_str)
 {
-	std::string	show_str;
-
-	show_str = origin_str;
 	if (origin_str.length() > 10)
 	{
-		show_str.resize(9);
-		show_str.append(".");
-		return (show_str);
+		origin_str.resize(9);
+		origin_str.append(".");
+		return (origin_str);
 	}
 	return (origin_str);
 }
 
 void Contact::ShowData(int idx, int mode)
 {
-	std::cout << std::setw(10) << idx + 1 << "|";
-	std::cout << std::setw(10) << DecoData(last_name) << "|";
-	std::cout << std::setw(10) << DecoData(first_name) << "|";
-	std::cout << std::setw(10) << DecoData(nickname);
 	if (mode == 0)
-		std::cout << std::endl;
+	{
+		std::cout << std::setw(10) << idx + 1 << "|";
+		std::cout << std::setw(10) << DecoData(last_name) << "|";
+		std::cout << std::setw(10) << DecoData(first_name) << "|";
+		std::cout << std::setw(10) << DecoData(nickname) << std::endl;
+	}
 	else
 	{
-		std::cout << "|";
-		std::cout << std::setw(10) << DecoData(number) << "|";
-		std::cout << std::setw(10) << DecoData(secret) << std::endl;
+		std::cout << std::setw(10) << idx + 1 << "|";
+		std::cout << std::setw(10) << last_name << "|";
+		std::cout << std::setw(10) << first_name << "|";
+		std::cout << std::setw(10) << nickname << "|";
+		std::cout << std::setw(10) << number << "|";
+		std::cout << std::setw(10) << secret << std::endl;
 	}
 }

@@ -59,20 +59,7 @@ void	PhoneBook::ShowContact()
 			if (contact[find_idx_num - 1].CheckEmpty())
 				std::cout << "This contact is empty.\n";
 			else
-			{
-				std::cout << std::setw(10) << "index";
-				std::cout << "|";
-				std::cout << std::setw(10) << "last name";
-				std::cout << "|";
-				std::cout << std::setw(10) << "first name";
-				std::cout << "|";
-				std::cout << std::setw(10) << "nickname";
-				std::cout << "|";
-				std::cout << std::setw(10) << "number";
-				std::cout << "|";
-				std::cout << std::setw(10) << "secret" << std::endl;
 				contact[find_idx_num - 1].ShowData(find_idx_num - 1, 1);
-			}
 			break ;
 		}
 	}
