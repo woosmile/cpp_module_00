@@ -18,7 +18,7 @@ class Contact
 		Contact();
 		~Contact();
 		void		InputData();
-		int			CheckEmpty();
+		bool		CheckEmpty();
 		void		ShowData(int idx, int secret);
 };
 

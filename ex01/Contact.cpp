@@ -73,7 +73,7 @@ void	Contact::InputData()
 	}
 }
 
-int	Contact::CheckEmpty()
+bool	Contact::CheckEmpty()
 {
 	if (first_name.empty() || last_name.empty() || nickname.empty() || number.empty() || secret.empty())
 		return (1);
