@@ -2,8 +2,8 @@
 - 객체지향 언어인 C++의 기초를 학습하는 과제
 
 ## 학습 내용
-- 클래스 작성 및 사용
-- String 객체와 하위 메소드 사용
+- 클래스 기본
+- String 객체와 하위 메소드
 - STL Container(pair, vector)
 - public, private 접근지정자
 
